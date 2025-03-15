@@ -12,3 +12,7 @@ center a window using the keyboard shortcut:
 
 ### NOTE
 **only work on windows**
+
+### How to install this
+**add the main.py to -> %appdata%\Microsoft\Windows\Start Menu\Programs\Startup**
+**this will automaticli open the app on start**
