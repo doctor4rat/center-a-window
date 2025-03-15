@@ -4,9 +4,6 @@ import threading
 import screeninfo
 import pystray
 from PIL import Image, ImageDraw
-import win32gui, win32con
-
-the_program_to_hide = win32gui.GetForegroundWindow()
 
 def center_window_on_monitors():
     """Centers the active window on the middle of monitors it spans, or the single monitor it is on."""
