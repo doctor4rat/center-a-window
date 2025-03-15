@@ -4,6 +4,8 @@ import threading
 import screeninfo
 import pystray
 from PIL import Image, ImageDraw
+import ctypes
+ctypes.windll.kernel32.SetConsoleTitleW("center a window")
 
 def center_window_on_monitors():
     """Centers the active window on the middle of monitors it spans, or the single monitor it is on."""
