@@ -4,6 +4,9 @@ import threading
 import screeninfo
 import pystray
 from PIL import Image, ImageDraw
+import win32gui, win32con
+
+the_program_to_hide = win32gui.GetForegroundWindow()
 
 def center_window_on_monitors():
     """Centers the active window on the middle of monitors it spans, or the single monitor it is on."""
@@ -29,15 +32,14 @@ def center_window_on_monitors():
 
                     active_window.moveTo(x, y)
                 else:
-                    print("Could not determine monitor(s).")
+                    return -1
             else:
-                print("Could not get window dimensions.")
+                return -1
         else:
-            print("No active window found.")
+            return -1
 
     except Exception as e:
-        print(f"Error centering window: {e}")
-
+        return -1
 def find_monitors_window_spans(x, y, width, height):
     """Finds the monitors that the window spans."""
     monitors = screeninfo.get_monitors()
@@ -82,7 +84,6 @@ def on_exit(icon, item):
 
 def main():
     """Main function to start the hotkey listener."""
-    print("Window centering script started. Press Ctrl+Alt to center the active window.")
     hotkey_thread = threading.Thread(target=hotkey_listener)
     hotkey_thread.daemon = True
     hotkey_thread.start()
