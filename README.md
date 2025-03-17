@@ -15,4 +15,4 @@ center a window using the keyboard shortcut:
 
 ### How to install this
 **add the main.py to -> %appdata%\Microsoft\Windows\Start Menu\Programs\Startup**
-**this will automaticli open the app on start**
+**this will automaticli open the app on restart pct**
